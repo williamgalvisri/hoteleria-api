@@ -10,13 +10,9 @@ app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 
 // These keys will be changed over time, the ideal would be to do them with dotenv, but due to time it is not possible to configure it
-const ACCESS_KEY = process.env.API_KEY_EMAIL;
+const ACCESS_KEY = `endpoint=https://hoteleriacommunucation1.unitedstates.communication.azure.com/;accesskey=j9dbH7TO9blt3vTqvBHf/0If4U/9uJji9r3qPru+1EYkywYpJb2m5RamngVGDJF1YpIdWNFyLJl0iEJNfFTNMA==`
 const client = new EmailClient(ACCESS_KEY);
 
-
-app.get('/', (req, res) => {
-  res.send('Hello World!')
-})
 
 app.post('/send-email', async (req, res) => {
     const {name, roomName, hotelName, price, numberGuest, emailTo} = req.body;
