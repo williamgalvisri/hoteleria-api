@@ -14,6 +14,10 @@ const ACCESS_KEY = process.env.API_KEY_EMAIL;
 const client = new EmailClient(ACCESS_KEY);
 
 
+app.get('/', (req, res) => {
+  res.send('Hello World!')
+})
+
 app.post('/send-email', async (req, res) => {
     const {name, roomName, hotelName, price, numberGuest, emailTo} = req.body;
 
