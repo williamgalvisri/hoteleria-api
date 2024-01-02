@@ -3,7 +3,7 @@ import { EmailClient } from "@azure/communication-email";
 import express from 'express';
 import bodyParser from 'body-parser';
 const app = express()
-const port = 3001;
+const port = process.env.port || 8080;
 
 
 app.use(bodyParser.urlencoded({ extended: false }))
