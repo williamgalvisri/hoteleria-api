@@ -15,7 +15,6 @@ const client = new EmailClient(ACCESS_KEY);
 
 
 app.post('/send-email', async (req, res) => {
-    console.log(req.body)
     const {name, roomName, hotelName, price, numberGuest, emailTo} = req.body;
 
 
