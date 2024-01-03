@@ -17,7 +17,7 @@ app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 
 // These keys will be changed over time, the ideal would be to do them with dotenv, but due to time it is not possible to configure it
-const ACCESS_KEY = process.env.API_KEY_EMAIL;
+const ACCESS_KEY = process.env.CUSTOMCONNSTR_API_KEY_EMAIL;
 const client = new EmailClient(ACCESS_KEY);
 
 app.post('/send-email', async (req, res) => {
